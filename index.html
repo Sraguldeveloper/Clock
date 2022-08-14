@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <link rel="stylesheet" href="./script.css">
+</head>
+<body>
+    <h1>Timer :</h1>
+    <div id="header">
+        <h4 id="hour"></h4>
+        <h4>:</h4>
+        <h4 id="minutes"></h4>
+        <h4>:</h4>
+        <h4 id="seconds"></h4>
+        <h4 id="amecho"></h4></div>
+<script>
+    let hourspan=document.getElementById('hour')
+    let minutespan=document.getElementById('minutes')
+    let secondspan=document.getElementById('seconds')
+   let amsetting=document.getElementById('amecho')
+setInterval(() => {
+    var date =new Date();
+    hourspan.innerHTML=date.getHours()
+    minutespan.innerHTML=date.getMinutes()
+    secondspan.innerHTML=date.getSeconds()
+    if(date.getHours()>12){
+      amsetting.innerHTML="PM"
+    }else{
+        amsetting.innerHTML="AM"
+    }
+}, 1000);
+</script>
+</body>
+</html>
